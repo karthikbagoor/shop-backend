@@ -1,6 +1,7 @@
 
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv').config();
 const {User} = require('./model/User');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
@@ -12,7 +13,7 @@ const {Cart} = require('./model/cart');
 
 
 //connecting to database
-mongoose.connect('mongodb://127.0.0.1:27017/shopifyEcom')
+mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{
     console.log('Connected to database');
 }).catch((err)=>{
