@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const morgan = require('morgan');
 const {Product} = require('./model/Product');
-const {Cart} = require('./model/cart');
+const {Cart} = require('./model/Cart');
 
 
 //connecting to database
@@ -69,7 +69,7 @@ app.post('/register',async(req,res)=>{
 })
 
 //task-2 -> create a login route
-app.post('/login',async(req,res)=>{
+app.post('/login',async(req,res)=>{ 
     try{
         const {email, password} = req.body;
 
